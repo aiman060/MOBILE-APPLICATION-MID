@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px; /* Added padding for mobile responsiveness */
+        }
+
+        .container {
+            width: 100%; /* Full width for mobile */
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px; /* Adjust logo size */
+            margin-bottom: 20px;
+        }
+
+        .container h1 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #444; /* Greyish-black */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #333; /* Darker grey on hover */
+        }
+
+        .toggle-btn {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007bff; /* Link color */
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .toggle-btn:hover {
+            color: #0056b3; /* Darker shade on hover */
+        }
+
+        .guest-option {
+            margin-top: 15px;
+            font-size: 14px;
+            color: black; /* Black text for guest option */
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .container h1 {
+                font-size: 24px;
+            }
+            .btn {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Logo on top -->
+        <h1>Welcome Back</h1>
+        <form action="auth.php" method="POST" id="loginForm">
+            <input type="email" name="email" class="input-field" placeholder="Email" required>
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+            <button class="btn" type="submit" name="login">Login</button>
+        </form>
+        <p class="toggle-btn" onclick="toggleForm()">Don't have an account? Sign Up</p>
+        <p class="guest-option" onclick="continueAsGuest()">Continue as Guest</p>
+    </div>
+
+    <div class="container" id="signupContainer" style="display: none;">
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Logo on top -->
+        <h1>Create Account</h1>
+        <form action="auth.php" method="POST" id="signupForm">
+            <input type="text" name="name" class="input-field" placeholder="Full Name" required>
+            <input type="email" name="email" class="input-field" placeholder="Email" required>
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+            <button class="btn" type="submit" name="signup">Sign Up</button>
+        </form>
+        <p class="toggle-btn" onclick="toggleForm()">Already have an account? Login</p>
+        <p class="guest-option" onclick="continueAsGuest()">Continue as Guest</p>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const loginContainer = document.getElementById('loginContainer');
+            const signupContainer = document.getElementById('signupContainer');
+
+            if (signupContainer.style.display === 'none') {
+                loginContainer.style.display = 'none';
+                signupContainer.style.display = 'block';
+            } else {
+                loginContainer.style.display = 'block';
+                signupContainer.style.display = 'none';
+            }
+        }
+
+        function continueAsGuest() {
+            // Redirect or navigate as a guest
+            window.location.href = 'home.html'; // Change this to your guest landing page
+        }
+    </script>
+
+</body>
+</html>

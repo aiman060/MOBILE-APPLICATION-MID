@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            flex-direction: column;
+        }
+
+        .splash-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .app-name {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0 0 0;
+            animation: slideUp 2s ease-out;
+        }
+
+        .slogan {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #555;
+            margin: 5px 0 20px 0;
+            animation: slideUp 2s ease-out;
+        }
+
+        /* Loading bar styles */
+        .loading-bar {
+            width: 100%;
+            max-width: 300px;
+            height: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .loading-fill {
+            height: 100%;
+            width: 0;
+            background-color: #333; /* Dark color to match theme */
+            animation: loading 3s ease-in-out forwards;
+        }
+
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* Responsive adjustments */
+        @media only screen and (max-width: 600px) {
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .app-name {
+                font-size: 20px;
+            }
+
+            .slogan {
+                font-size: 16px;
+            }
+
+            .loading-bar {
+                max-width: 200px; /* Smaller loading bar for mobile */
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="splash-container">
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Logo on top -->
+        <div class="app-name">Infographic</div>
+        <div class="slogan">Seize the Dip, Ride the Rise</div>
+
+        <!-- Loading bar -->
+        <div class="loading-bar">
+            <div class="loading-fill"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulating a splash screen timeout before redirecting to the app
+        setTimeout(function() {
+            window.location.href = "form.html"; // Redirect to your app's home page
+        }, 5000); // Splash screen duration (3 seconds)
+    </script>
+
+</body>
+</html>

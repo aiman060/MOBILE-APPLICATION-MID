@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic | Home</title>
+    <!-- Importing basic styles and icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #302f2f;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 0.8rem;
+            margin: 5px 0;
+        }
+
+        /* Stock visualization section */
+        .stock-visualization {
+            text-align: center;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px auto;
+            max-width: 90%;
+        }
+
+        .stock-visualization img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .stock-visualization h2 {
+            font-size: 1.3rem;
+            color: #1f2020;
+            margin: 10px 0;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns on all screens */
+            gap: 25px;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid #ddd;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: #000;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            transform: rotate(360deg);
+        }
+
+        .feature-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .feature-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .features {
+                grid-template-columns: 1fr 1fr; /* Maintain 2 columns on small screens */
+            }
+
+            .feature {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .stock-visualization h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Bottom Navbar */
+        .bottom-navbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .bottom-navbar a {
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .bottom-navbar a i {
+            display: block;
+            font-size: 22px;
+        }
+
+        .bottom-navbar a:hover {
+            background-color: #575757;
+            border-radius: 8px;
+        }
+        @media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.2rem; /* Smaller header on small screens */
+    }
+}
+.stock-visualization img {
+    width: 100%; /* This will already keep it responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+body {
+    padding-bottom: 60px; /* Adjust this value based on the navbar height */
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section Start -->
+    <div class="header">
+        <h1>Infographic</h1>
+        <p>Seize the dip, Ride the rise</p>
+    </div>
+    <!-- Header Section End -->
+
+    <!-- Stock Visualization Section Start -->
+    <div class="stock-visualization">
+        <img src="stock.jpg" alt="Stock Data Visualization">
+        <h2>Stock Data Visualization</h2>
+        <p>Track market trends with easy-to-understand charts. Make better investment decisions.</p>
+        <p class="cta" onclick="window.location.href='feature.html'">Click here for more insights!</p>
+    </div>
+    <!-- Stock Visualization Section End -->
+
+    <!-- Features Section Start -->
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-chart-line feature-icon"></i>
+            <p class="feature-title">Trendspotting</p>
+            <p class="feature-description">See the pulse of markets in seconds.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-cogs feature-icon"></i>
+            <p class="feature-title">Built to Grow</p>
+            <p class="feature-description">Tools to scale your trading strategy.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-users feature-icon"></i>
+            <p class="feature-title">User First</p>
+            <p class="feature-description">Designed with simplicity and ease.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-mobile-alt feature-icon"></i>
+            <p class="feature-title">On-the-Go Updates</p>
+            <p class="feature-description">Stay connected from anywhere.</p>
+        </div>
+    </div>
+    <!-- Features Section End -->
+
+    <!-- Chatbot Code -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "MXW6Y94htvP8LxcPU3FfL",
+            domain: "www.chatbase.co"
+        };
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" defer></script>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-navbar">
+        <a href="home.html" aria-label="Home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="news.html" aria-label="Stocks"><i class="fas fa-chart-line"></i><span>Stocks</span></a>
+        <a href="video.html" aria-label="Videos"><i class="fas fa-video"></i><span>Videos</span></a>
+        <a href="about.html" aria-label="About Us"><i class="fas fa-info-circle"></i><span>About Us</span></a>
+        <a href="feedback.html" aria-label="Feedback"><i class="fas fa-comment"></i><span>Feedback</span></a>
+    </nav>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
